@@ -26,9 +26,9 @@ public class MovieRepostory {
                 .enqueue(new Callback<MovieDetails>() {
                     @Override
                     public void onResponse(Call<MovieDetails> call, Response<MovieDetails> response) {
-                        Log.v("TAG",""+call.request().url());
+
                         if (response.body() != null) {
-                            Log.v("TAG","success+bbj");
+
                             movieResponseLiveData.postValue(response.body());
                         }
                     }
@@ -36,7 +36,7 @@ public class MovieRepostory {
                     @Override
                     public void onFailure(Call<MovieDetails> call, Throwable t) {
                        // movieResponseLiveData.postValue(null);
-                        Log.v("TAG","fail"+t.getMessage());
+
 
                     }
                 });

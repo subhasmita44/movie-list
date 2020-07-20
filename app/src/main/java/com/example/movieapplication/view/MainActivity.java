@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         movieAdapter = new MovieAdapter(recyclerView, movielist, MainActivity.this);
 
         recyclerView.setAdapter(movieAdapter);
-        Log.v("TAG","liston"+movielist.size());
+
       movieAdapter.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
             public void onLoadMore() {
@@ -132,8 +132,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void performSearch() {
-
-        Log.v("TAG","call");
         String keyword = keywordEditText.getEditableText().toString();
         int length = keywordEditText.length();
 
@@ -154,8 +152,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupRecycler() {
         if(movielist2!=null) {
-            Log.v("TAG", "list" + movielist2.size());
-
             movielist.addAll(movielist2);
             movieAdapter.setResults(movielist);
             movieAdapter.notifyDataSetChanged();
