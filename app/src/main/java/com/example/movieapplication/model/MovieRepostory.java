@@ -7,13 +7,9 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.movieapplication.model.network.Api;
 import com.example.movieapplication.model.network.RetrofitService;
-
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MovieRepostory {
 
@@ -23,19 +19,6 @@ public class MovieRepostory {
     public MovieRepostory() {
         movieResponseLiveData = new MutableLiveData<>();
         movieSearchService = RetrofitService.cteateService(Api.class);
-       /* movieResponseLiveData = new MutableLiveData<>();
-
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
-
-        movieSearchService = new retrofit2.Retrofit.Builder()
-                .baseUrl("http://www.omdbapi.com")
-                .client(client)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(Api.class);*/
-
     }
 
     public void searchMovie(String api,String type,String page,String s) {
